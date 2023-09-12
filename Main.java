@@ -22,7 +22,6 @@ class Main {
 		
     //taken from https://stackoverflow.com/questions/30564462/read-data-from-a-text-file-and-create-an-object
     Scanner fileInput = new Scanner(new File("items.txt"));
-    fileInput.useLocale(Locale.US);
     fileInput.useDelimiter(",|\n");
     ArrayList<Food> menuList = new ArrayList<Food>();
 
