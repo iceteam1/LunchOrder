@@ -21,7 +21,7 @@ class Main {
 		
     //taken from https://stackoverflow.com/questions/30564462/read-data-from-a-text-file-and-create-an-object
     Scanner fileInput = new Scanner(new File("items.txt"));
-    fileInput.useDelimiter("-|\n");
+    fileInput.useDelimiter(",|\n");
     ArrayList<Food> menuList = new ArrayList<Food>();
 
     while(fileInput.hasNext()){
@@ -34,10 +34,8 @@ class Main {
       menuList.add(new Food(food, price, fat, Carbs, Fiber));
     }
 
-    for(int i = 0; i < menuList.size(); i++){
-      System.out.println(menuList.get(i));
-    }
-
+    menu Menu = new menu(menuList);
+    Menu.printMenu("FoodZone");
     
 
 	System.out.println("Your total is: $ " + format.format(total));
