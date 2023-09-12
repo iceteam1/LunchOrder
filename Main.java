@@ -2,6 +2,7 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
+import java.util.*;
 
 
 class Main {
@@ -21,12 +22,13 @@ class Main {
 		
     //taken from https://stackoverflow.com/questions/30564462/read-data-from-a-text-file-and-create-an-object
     Scanner fileInput = new Scanner(new File("items.txt"));
+    fileInput.useLocale(Locale.US);
     fileInput.useDelimiter(",|\n");
     ArrayList<Food> menuList = new ArrayList<Food>();
 
     while(fileInput.hasNext()){
       String food = fileInput.next();
-      double price =  Double.valueOf(fileInput.next().substring(1));;
+      double price = fileInput.nextDouble();
       int fat = fileInput.nextInt();
       int Carbs = fileInput.nextInt();
       int Fiber = fileInput.nextInt();
