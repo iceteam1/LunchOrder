@@ -23,6 +23,9 @@ class Main {
 	Food burger = new Food(1.85, 9, 33, 1);	
 	
 	Food salad = new Food(2.00, 1, 11, 5);
+
+	Food fries = new Food(1.90,10,36,3);
+
 	
 
 	System.out.println("Enter number of burgers: ");
@@ -33,6 +36,8 @@ class Main {
 	
 	
 	System.out.println(salad.toString("salad"));
+
+	System.out.println(fries.toString("fries"));
 
 	
 
