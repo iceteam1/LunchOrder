@@ -4,10 +4,11 @@ public class Food {
 	private int carb;
 	private int fiber;
 	private double price;
+	private String name;
 	
-	
-	public Food (double price,int fat,int carb,int fiber){
-		this.price = price;
+	public Food (String name, double price,int fat,int carb,int fiber){
+		this.name = name;
+    this.price = price;
 		this.fat = fat;
 		this.fiber = fiber;
 		this.carb = carb;               
@@ -33,11 +34,19 @@ public class Food {
 		return fat;	
 	}
 	
-	public void setCarb(int carbo){
+	public void setCarb(int carb){
 		this.carb = carb;
 		
 	}
 
+  public void setName(String name){
+    this.name = name;
+  }
+
+  public String getName(){
+    return name;
+  }
+  
 	public int getCarb(){
 		return carb;	
 	}
@@ -50,9 +59,9 @@ public class Food {
 		return fiber;	
 	}
 	
-	public String toString(Object d){  // use toString to test object variable
+	public String toString(){  // use toString to test object variable
 		String FoodObject;
-		FoodObject = "Each " + d + " has " + this.getFat()+"g of fat, "+this.getCarb()+"g of carbs, and "+this.getFiber()+ "g of fiber";
+		FoodObject = "Each " + this.getName() + " has " + this.getFat()+"g of fat, "+this.getCarb()+"g of carbs, and "+this.getFiber()+ "g of fiber";
 		return FoodObject;
 		
 	}
