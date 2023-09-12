@@ -26,6 +26,8 @@ class Main {
 
 	Food fries = new Food(1.90,10,36,3);
 
+	Food tacos = new Food(1.20, 5, 16, 5);
+
 	
 
 	System.out.println("Enter number of burgers: ");
@@ -38,6 +40,9 @@ class Main {
 	System.out.println(salad.toString("salad"));
 
 	System.out.println(fries.toString("fries"));
+
+	System.out.println(tacos.toString("tacos"));
+
 
 	
 
