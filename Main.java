@@ -2,7 +2,7 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
-import java.util.*;
+
 
 
 class Main {
@@ -53,15 +53,21 @@ class Main {
     String[] orders = new String[listSize];
     int[] quantityList = new int[listSize];
 
-
-
     int f = 0;
-    while (f<menuList.size()){
-      System.out.print("Enter Item " + (f+1) + ":");//keeps it from glitching
+    while (f<orders.length){
+      System.out.print("Enter Item " + (f+1) + ":");
       orders[f] = input.next();
+      System.out.println(orders[f]);
       System.out.print("Enter the quantity of that item: ");
       quantityList[f] = input.nextInt();
-      if(foodNames.contains(orders[f])){
+      boolean orderCheck = false;
+      for(int i = 0; i < foodNames.size(); i++){
+        if(foodNames.get(i).equals(orders[f])){
+          orderCheck = true;
+          break;
+        }
+      }
+      if(orderCheck){
         f+=1;
       }else{
         System.out.println("Invalid Item");
