@@ -21,6 +21,7 @@ class Main {
 		DecimalFormat format = new DecimalFormat("#.00");
 		
     //taken from https://stackoverflow.com/questions/30564462/read-data-from-a-text-file-and-create-an-object
+    //reads all the information from the items.txt and creates an ArrayList full of food objects
     Scanner fileInput = new Scanner(new File("items.txt"));
     fileInput.useDelimiter(",|\n");
     ArrayList<Food> menuList = new ArrayList<Food>();
@@ -34,16 +35,45 @@ class Main {
 
       menuList.add(new Food(food, price, fat, Carbs, Fiber));
     }
-
+    
+    fileInput.close();
     menu Menu = new menu(menuList);
     Menu.printMenu("FoodZone");
     
+    ArrayList<String>foodNames = new ArrayList<String>();
+    for(int i = 0; i < menuList.size(); i++){
+      foodNames.add(menuList.get(i).getName());
+    }
+    
+    System.out.println(foodNames.toString());
 
-	System.out.println("Your total is: $ " + format.format(total));
+    //ordering code
+    System.out.print("How many items do you want to order?");
+    int listSize = input.nextInt();
+    String[] orders = new String[listSize];
+    int[] quantityList = new int[listSize];
+
+
+
+    int f = 0;
+    while (f<menuList.size()){
+      System.out.print("Enter Item " + (f+1) + ":");//keeps it from glitching
+      orders[f] = input.next();
+      System.out.print("Enter the quantity of that item: ");
+      quantityList[f] = input.nextInt();
+      if(foodNames.contains(orders[f])){
+        f+=1;
+      }else{
+        System.out.println("Invalid Item");
+      }
+    }
+
+    
+
+	  System.out.println("Your total is: $ " + format.format(total));
 	
 	
-	input.close();
-
+	  input.close();
 
 
 	}// end main
