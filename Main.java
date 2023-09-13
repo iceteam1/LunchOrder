@@ -63,7 +63,7 @@ class Main {
       boolean orderCheck = false;
       for(int i = 0; i < foodNames.size(); i++){
         if(foodNames.get(i).equals(orders[f])){
-          orderCheck = true;
+          orderCheck = true; //checks to make sure that the item the user ordered is actually on the list
           break;
         }
       }

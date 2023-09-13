@@ -14,6 +14,9 @@ public class menu {
     for(int i = 0; i<items.size(); i++){
       System.out.print(items.get(i).getName() + "-----");
       System.out.printf("$%.2f%n", items.get(i).getPrice());
+    
+      System.out.println(items.get(i));//prints the nutritional information
+      System.out.println();
     }
   }
 
