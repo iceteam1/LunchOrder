@@ -40,6 +40,7 @@ class Main {
     menu Menu = new menu(menuList);
     Menu.printMenu("FoodZone");
     
+    //creates a list of just the names of the food
     ArrayList<String>foodNames = new ArrayList<String>();
     for(int i = 0; i < menuList.size(); i++){
       foodNames.add(menuList.get(i).getName());
