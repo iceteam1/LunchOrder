@@ -57,7 +57,7 @@ class Main {
     while (f<orders.length){
       System.out.print("Enter Item " + (f+1) + ":");
       orders[f] = input.next();
-      System.out.println(orders[f]);
+      //System.out.println(orders[f]);
       System.out.print("Enter the quantity of that item: ");
       quantityList[f] = input.nextInt();
       boolean orderCheck = false;
