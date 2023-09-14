@@ -45,7 +45,7 @@ class Main {
       foodNames.add(menuList.get(i).getName());
     }
     
-    System.out.println(foodNames.toString());
+    //System.out.println(foodNames.toString());
 
     //ordering code
     System.out.print("How many items do you want to order?");
@@ -61,12 +61,15 @@ class Main {
       System.out.print("Enter the quantity of that item: ");
       quantityList[f] = input.nextInt();
       boolean orderCheck = false;
+      
+    
       for(int i = 0; i < foodNames.size(); i++){
         if(foodNames.get(i).equals(orders[f])){
           orderCheck = true; //checks to make sure that the item the user ordered is actually on the list
           break;
         }
       }
+      //will only move onto the next item if the previous item is on the menu
       if(orderCheck){
         f+=1;
       }else{
@@ -74,11 +77,23 @@ class Main {
       }
     }
 
-    
+    //creates a list of prices in the same order as the items in the menu (To simplify things)
+    double[] priceList = new double[menuList.size()];
+    for(int i = 0; i < menuList.size(); i++){
+      priceList[i] = menuList.get(i).getPrice();
+    }
 
-	  System.out.println("Your total is: $ " + format.format(total));
-	
-	
+    double tax = 0.13; //tax percentage value
+	  //calculates the total price + a tax
+    for(int i = 0; i < orders.length; i++){
+      total+=(priceList[foodNames.indexOf(orders[i])] * quantityList[i]);
+    }
+    
+    
+    System.out.println("Your total is: $ " + format.format(total));
+    double finalPrice = total + (total*tax);
+    System.out.println("Tax: $" + format.format(total*tax));
+    System.out.println("Final Price: $" + format.format(finalPrice));
 	  input.close();
 
 
