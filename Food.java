@@ -1,12 +1,16 @@
 public class Food {
-	
+
+
+	private String dish;
+	private double price;
 	private int fat;
 	private int carb;
 	private int fiber;
-	private double price;
 	
 	
-	public Food (double price,int fat,int carb,int fiber){
+	
+	public Food (String dish,double price,int fat,int carb,int fiber){
+		this.dish = dish;
 		this.price = price;
 		this.fat = fat;
 		this.fiber = fiber;
@@ -15,6 +19,18 @@ public class Food {
 	}
 	
 	
+public void setDish(double dish){
+		this.dish = dish;
+		
+	}
+
+	public double getDish(){
+		return dish;	
+	}
+
+
+
+
 	public void setPrice(double price){
 		this.price = price;
 		
