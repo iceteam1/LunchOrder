@@ -1,0 +1,1 @@
+Welcome back!   In Grade 12, we will collaborate on some projects and explore "source control".   Programmers work together in teams on certain programming tasks and many use GitHub to change, modify and update programs
